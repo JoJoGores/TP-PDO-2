@@ -3,8 +3,8 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
         <div class="container">
-            <h1 class="display-3">Le Savoirs à Votre Portée</h1>
-            <p>Découvrez un espace dédié à la culture, à la connaissance et à l'évasion. Que vous soyez passionné de lecture, étudiant à la recherche de ressources ou simplement curieux d’apprendre, notre bibliothèque vous ouvre ses portes avec une collection variée et des services adaptés à tous les âges. Explorez, empruntez, et laissez-vous inspirer.</p>
+            <h1 class="display-3">Air Moldova</h1>
+            <p>Venez découvrir le magnifique pays de Vladi-AFK</p>
             <p><a class="btn btn-primary btn-lg" href="#" role="button"> À propos &raquo;</a></p>
         </div>
   </div>
