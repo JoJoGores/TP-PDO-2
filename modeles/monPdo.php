@@ -8,9 +8,9 @@ class MonPdo
 {
 
 private static $serveur='mysql:host=srvmysql.btssio.dedyn.io';
-private static $bdd='GORESJO_biblio'; 
-private static $user='GORESJO' ; 
-private static $mdp='18112006' ;
+private static $bdd='dbname=DELPIER_biblio'; 
+private static $user='DELPIER' ; 
+private static $mdp='20050924' ;
 private static $monPdo;
 private static $unPdo = null;
 
@@ -18,8 +18,7 @@ private static $unPdo = null;
 //	pour toutes les méthodes de la classe
 private function __construct()
 {
-
-    MonPdo::$unPdo = new PDO(MonPdo::$serveur.';dbname='.MonPdo::$bdd, MonPdo::$user, MonPdo::$mdp);
+    MonPdo::$unPdo = new PDO(MonPdo::$serveur.';'.MonPdo::$bdd, MonPdo::$user, MonPdo::$mdp);
     MonPdo::$unPdo->query("SET CHARACTER SET utf8");
     MonPdo::$unPdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
