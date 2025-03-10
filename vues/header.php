@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.2/examples/jumbotron/">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/8fd16e183c.js" crossorigin="anonymous"></script>
 
 
@@ -33,7 +33,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">Ma Bibliothèque</a>
+  <a class="navbar-brand" href="index.php">Ma Bibliothèque</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -59,7 +59,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-flag"></i>  Gestion des nationalités</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="index.php?uc=nationalite&action=list">Liste des nationalités</a>
-          <a class="dropdown-item" href="index.php?uc=nationalite&action=add">Ajouter un nationalité</a>
+          <a class="dropdown-item" href="index.php?uc=nationalite&action=add">Ajouter une nationalité</a>
         </div>
       </li>
       <li class="nav-item dropdown">

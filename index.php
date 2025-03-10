@@ -1,14 +1,13 @@
 <?php ob_start();
 session_start(); 
 include "vues/header.php" ;
-include "vues/messageFlash.php";
-
+include "vues/messagesFlash.php";
 include "modeles/monPdo.php";
-
 include "modeles/Continent.php";
 include "modeles/Nationalite.php";
-include "modeles/Categorie.php";
-
+include "modeles/Auteur.php";
+include "modeles/Livre.php";
+include "modeles/Genre.php";
 
 
 $uc = empty($_GET['uc']) ? "accueil" : $_GET['uc'];
@@ -17,15 +16,22 @@ switch($uc){
     case 'accueil':
         include('vues/accueil.php');
         break;
-    case 'continents':
+    case 'continent':
         include('controllers/continentController.php');
         break;   
-    case 'nationalites':
+    case 'nationalite':
         include('controllers/nationaliteController.php');
         break;
-    case 'categories':
-        include('controllers/categorieController.php');
+    case 'auteur':
+        include('controllers/auteurController.php');
         break;
+    case 'livre':
+        include('controllers/livreController.php');
+        break;
+    case 'genre':
+        include('controllers/genreController.php');
+        break;
+   
 }
 
 include "vues/footer.php";?>
