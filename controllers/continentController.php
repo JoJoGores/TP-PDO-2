@@ -73,6 +73,8 @@ switch($action) {
             $_SESSION['message'] = ["error" => "Le libellé est obligatoire"];
         }
         header('location:index.php?uc=continent&action=list');
+
+        
         exit();
         break;
 
