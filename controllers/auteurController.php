@@ -8,6 +8,7 @@ switch($action){
 
         case 'add';
             $mode="Ajouter";
+            $lesNationalites=Nationalite::findAll();
             include('vues/auteur/formAuteur.php');
             break;
 
@@ -21,35 +22,37 @@ switch($action){
             $auteur=Auteur::findById($_GET['num']);
             $nb=Auteur::delete($auteur);
             if($nb==1){
-                $_SESSION['message']=["success"=>"Le auteur a bien été supprimé"];
+                $_SESSION['message']=["success"=>"L'auteur a bien été supprimé"];
             }else{
-                $_SESSION['message']=["danger"=>"Le auteur n'a pas été supprimé"];
+                $_SESSION['message']=["danger"=>"L'auteur n'a pas été supprimé"];
             }
             header('location:index.php?uc=auteur&action=list');
             break;
 
         case 'valideForm';
             $auteur=new Auteur();
-            if(empty($_POST['num'])){//cas d'une création
+            if(empty($_POST['num'])){
                 $auteur->setNom($_POST['nom']);
                 $auteur->setPrenom($_POST['prenom']);
-                $auteur->setNationalite($_POST['nationalite']);
+                $nation=Nationalite::findById($_POST['nationalite']);
+                $auteur->setNationalite($_POST['nation']);
 
                 $nb=Auteur::add($auteur);
                 $message ="ajouté"; 
-            }else{//cas d'une modif
+            }else{
                 $auteur->setNum($_POST['num']);
                 $auteur->setNom($_POST['nom']);
                 $auteur->setPrenom($_POST['prenom']);
+                $nation=Nationalite::findById($_POST['nationalite']);
                 $auteur->setNationalite($_POST['nationalite']);
 
                 $nb=Auteur::update($auteur);
                 $message ="modifié";
             }
             if($nb==1){
-                $_SESSION['message']=["success"=>"Le auteur a bien été $message"];
+                $_SESSION['message']=["success"=>"L'auteur a bien été $message"];
             }else{
-                $_SESSION['message']=["danger"=>"Le auteur n'a pas été $message"];
+                $_SESSION['message']=["danger"=>"L'auteur n'a pas été $message"];
             }
             header('location:index.php?uc=auteurs&action=list');
             break;

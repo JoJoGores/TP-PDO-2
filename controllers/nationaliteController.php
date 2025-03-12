@@ -31,9 +31,9 @@ switch($action){
         $laNationalite = Nationalite::findById($_GET['num']);
         $nb = Nationalite::delete($laNationalite);
         if ($nb == 1) {
-            $_SESSION['message'] = ["success" => "Le nationalité a bien été supprimé"];
+            $_SESSION['message'] = ["success" => "La nationalitée a bien été supprimée"];
         } else {
-            $_SESSION['message'] = ["danger" => "Le nationalité n'a pas été supprimé"];
+            $_SESSION['message'] = ["danger" => "La nationalitée n'a pas été supprimée"];
         }
         header('location:index.php?uc=nationalite&action=list');
         break;
@@ -45,15 +45,16 @@ switch($action){
                     ->setContinent($continent);
         if (empty($_POST['num'])) { 
             $nb = Nationalite::add($nationalite);
-            $message = "ajouté"; 
+            $message = "ajoutée"; 
         } else { 
+            $nationalite->setNum(($_POST["num"]));
             $nb = Nationalite::update($nationalite);
-            $message = "modifié";
+            $message = "modifiée";
         }
         if ($nb == 1) {
-            $_SESSION['message'] = ["success" => "Le nationalité a bien été $message"];
+            $_SESSION['message'] = ["success" => "La nationalitée a bien été $message"];
         } else {
-            $_SESSION['message'] = ["danger" => "Le nationalité n'a pas été $message"];
+            $_SESSION['message'] = ["danger" => "La nationalitée n'a pas été $message"];
         }
         header('location:index.php?uc=nationalite&action=list');
         break;
